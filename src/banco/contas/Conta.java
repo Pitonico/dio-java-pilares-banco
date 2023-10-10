@@ -2,34 +2,19 @@ package banco.contas;
 
 import banco.clientes.Cliente;
 import banco.utils.exceptions.ValorInsuficienteException;
+import lombok.Getter;
 
 public abstract class Conta implements IConta{
 
     private static int sequencial = 1;
-    private static final int AGENCIA = 1;
-    private int numeroConta;
-    private double saldo = 0;
-    private Cliente cliente;
+    @Getter private static final int AGENCIA = 1;
+    @Getter private int numeroConta;
+    @Getter private double saldo = 0;
+    @Getter private Cliente cliente;
 
     protected Conta(Cliente cliente) {
         this.numeroConta = sequencial++;
         this.cliente = cliente;
-    }
-
-    public int getAGENCIA() {
-        return AGENCIA;
-    }
-
-    public int getNumeroConta() {
-        return numeroConta;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
     }
 
     @Override

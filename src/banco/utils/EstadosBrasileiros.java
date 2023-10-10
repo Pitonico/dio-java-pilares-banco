@@ -1,5 +1,10 @@
 package banco.utils;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public enum EstadosBrasileiros {
     ACRE("Acre", "AC"),
     ALAGOAS("Alagoas", "AL"),
@@ -31,17 +36,4 @@ public enum EstadosBrasileiros {
 
     private String estado;
     private String sigla;
-
-    EstadosBrasileiros(String estado, String sigla) {
-        this.sigla = sigla;
-        this.estado = estado;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public String getSigla() {
-        return sigla;
-    }
 }

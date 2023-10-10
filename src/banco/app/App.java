@@ -11,20 +11,20 @@ import banco.utils.EstadosBrasileiros;
 public class App {
     public static void main(String[] args) {
         Endereco enderecoBanco = Endereco.builder()
-            .setLogradouro("Rua do Banco Pilares")
-            .setNumero(100)
-            .setCidade("Cidade BP")
-            .setEstado(EstadosBrasileiros.PERNAMBUCO)
+            .logradouro("Rua do Banco Pilares")
+            .numero(100)
+            .cidade("Cidade BP")
+            .estado(EstadosBrasileiros.PERNAMBUCO)
             .build();
 
         Banco banco = new Banco("Banco Pilares");
         banco.setEndereco(enderecoBanco);
 
         Endereco enderecoCliente = Endereco.builder()
-            .setLogradouro("Rua do Cliente 1")
-            .setNumero(55)
-            .setCidade("Cidade A")
-            .setEstado(EstadosBrasileiros.SAO_PAULO)
+            .logradouro("Rua do Cliente 1")
+            .numero(55)
+            .cidade("Cidade A")
+            .estado(EstadosBrasileiros.SAO_PAULO)
             .build();
        
         Cliente cliente = new Cliente("Diogo", 36);
@@ -34,10 +34,10 @@ public class App {
         cliente.setConta(conta);
 
         enderecoCliente = Endereco.builder()
-            .setLogradouro("Rua do Cliente 2")
-            .setNumero(110)
-            .setCidade("Cidade B")
-            .setEstado(EstadosBrasileiros.AMAZONAS)
+            .logradouro("Rua do Cliente 2")
+            .numero(110)
+            .cidade("Cidade B")
+            .estado(EstadosBrasileiros.AMAZONAS)
             .build();
         
         Cliente cliente2 = new Cliente("Daniel", 42);
@@ -46,8 +46,8 @@ public class App {
         Conta conta2 = new ContaPoupanca(cliente2);
         cliente.setConta(conta2);
 
-        banco.setConta(conta);
-        banco.setConta(conta2);
+        banco.addConta(conta);
+        banco.addConta(conta2);
 
         System.out.println("*** Inicio ***");
         System.out.println("Saldo C1: R$" + conta.getSaldo());
